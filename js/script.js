@@ -25,10 +25,10 @@ function getRandomQuote(array) {
   *
   * @param {array} array Array of quote objects.
   *
-  * @return {Object} The randomly select quote object from `array`.
+  * @return {Object} The randomly selected quote object from `array`.
   */
   
-  // Generate random integer from 0 to (array.length - 1)
+  // Generate a random integer from 0 to (array.length - 1)
   let rando = Math.floor(Math.random() * array.length);
   
   // Return the randomly selected quote object 
@@ -38,7 +38,7 @@ function getRandomQuote(array) {
 function printQuote() {
   /**
   * Gets a random quote object from the quotes array and formats it to display.
-  * Also change the background color of the page. 
+  * Also changes the background color of the page. 
   */
     
   // Get the random quote object
@@ -71,7 +71,7 @@ function printQuote() {
 // https://stackoverflow.com/a/1484514
 function getRandomColor() {
     /**
-    * Generate a random 6-character Hex string, to be interpretted by the caller as a color code.
+    * Generate a random 6-character Hex string, to be interpreted by the caller as a color code.
     */
   var letters = '0123456789ABCDEF';
   var color = '#';
