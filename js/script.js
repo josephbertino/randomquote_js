@@ -7,16 +7,15 @@ Author: Joe Bertino
 
 // Array of quotes
 const quotes = [
-  {source: 'Sean Roach', quote: `We're going to give you a little lizard kiss here.`, citation: 'Check It Out!', year: 2014, format: 'TV'},
-  {source: 'Dr. Steve Brule', quote: `Life is about having a good time and having candy, not putting roaches in your hair!`, citation: 'Check It Out!', year: 2013, format: 'TV'},
-  {source: 'Noam Chomsky', quote: `The general population doesn't know what's happening and it doesn't even know that it doesn't know.`, citation: `Grating the Cheese`, year: 1977},
-  {source: 'Uncle Iroh', quote: `Don’t let the plans get in the way of the Journey.`, citation: 'Wikipedia', year: 2000},
-  {source: 'Donald Knuth', quote: `Computers are good at following instructions, but not at reading your mind.`, citation: 'The Brothers Karamzov', year: 1492, format: 'Movie'},
-  {source: 'Chuck D', quote: `If you don't stand for something, you'll fall for anything.`, citation: 'Believe The Hype', year: 1992, format: 'Song'},
-  {source: 'Anatole France', quote: `If fifty million people say a foolish thing, it is still a foolish thing.`, citation: 'A Book', year: 1840},
-  {source: 'Carl Jung', quote: `The first half of life is devoted to forming a healthy ego, the second half is going inward and letting go of it.`, citation: 'Dreams', year: 1937, format: 'Book'},
-  {source: 'Albert Einstein', quote: `If you want to live a happy life, tie it to a goal, not to people or objects.`, citation: 'Mad Magazine', year: 2000},
-  {source: 'J.K. Rowling', quote: `If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.`, citation: "Larry Potter", year: 2011, format: 'Book'}
+  {source: 'David Puddy', quote: `Hey, how come people don’t have dip for dinner? Why is it only a snack, why can’t it be a meal, you know? I don’t understand stuff like that.`, citation: 'Seinfeld', year: 1995, format: 'TV'},
+  {source: 'Timmy', quote: `You dipped the chip. You took a bite. And you dipped again. That’s like putting your whole mouth right in the dip! From now on, when you take a chip — just take one dip and end it!`, citation: 'Seinfeld', year: 1994, format: 'TV'},
+  {source: 'Jerry Seinfeld', quote: `Breaking up is like knocking over a Coke machine. You can’t do it in one push; you got to rock it back and forth a few times, and then it goes over.`, citation: `Seinfeld`, year: 1996, format: 'TV'},
+  {source: 'Cosmo Kramer', quote: `My face is my livelihood, my allure… my twinkle! Everything I have I owe to this face.`, citation: 'Seinfeld', year: 1997, format: 'TV'},
+  {source: 'George Costanza', quote: `When you look annoyed all the time, people think that you’re busy.`, citation: 'Seinfeld', year: 1996, format: 'TV'},
+  {source: 'Elaine Benes', quote: `I don’t know how you guys walk around with those things.`, citation: 'Seinfeld', year: 1993, format: 'TV'},
+  {source: 'J. Peterman', quote: `My mind is as barren as the surface of the moon.`, citation: 'Seinfeld', year: 1998, format:'TV'},
+  {source: 'Frank Costanza', quote: `I’m like a phoenix, rising from Arizona!`, citation: 'Seinfeld', year: 1996, format: 'TV'},
+  {source: 'Newman', quote: `When you control the mail you control... information.`, citation: "Seinfeld", year: 1993, format: 'TV'}
 ]
 
 function getRandomQuote(array) {
@@ -27,28 +26,28 @@ function getRandomQuote(array) {
   *
   * @return {Object} The randomly selected quote object from `array`.
   */
-  
+
   // Generate a random integer from 0 to (array.length - 1)
   let rando = Math.floor(Math.random() * array.length);
-  
-  // Return the randomly selected quote object 
+
+  // Return the randomly selected quote object
   return array[rando];
 }
 
 function printQuote() {
   /**
   * Gets a random quote object from the quotes array and formats it to display.
-  * Also changes the background color of the page. 
+  * Also changes the background color of the page.
   */
-    
+
   // Get the random quote object
   let randQuote = getRandomQuote(quotes);
-  
+
   // Generate the html to display on the page
   let html = `
     <p class="quote">${randQuote.quote}</p>
     <p class="source">${randQuote.source}`;
-  
+
   if ( randQuote.hasOwnProperty('citation') ) {
     html += `<span class="citation">${randQuote.citation}`;
     if (randQuote.hasOwnProperty('format') ) {
@@ -59,9 +58,9 @@ function printQuote() {
   if ( randQuote.hasOwnProperty('year') ) {
     html += `<span class="year">${randQuote.year}</span>`;
   }
-  
+
   html += `</p>`;
-  
+
   // Display the html on the page
   document.getElementById('quote-box').innerHTML = html;
   changeBGColor();
@@ -85,13 +84,13 @@ function changeBGColor() {
     /**
     * Change the background color of the page.
     */
-    
+
     const color = getRandomColor();
-    
+
     document.body.style.background = color;
 }
 
 // Map the "load quote" button to the function printQuote()
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
-setInterval(function() {printQuote();}, 10000);
+// setInterval(function() {printQuote();}, 10000);
